@@ -372,6 +372,8 @@ def game_loop(mode):
         keys = pygame.key.get_pressed()
         if (keys[pygame.K_SPACE] or keys[pygame.K_UP]) and not dino_sprite.jump_flag and not dino_sprite.resize_flag \
                 and not dino_sprite.falling_flag:
+            sound2 = pygame.mixer.Sound('swing-whoosh-110410.mp3')
+            sound2.play()
             dino_sprite.jump_flag = True
             dino_sprite.jump_count = 15
         if keys[pygame.K_DOWN] and not dino_sprite.resize_flag and not dino_sprite.jump_flag \
